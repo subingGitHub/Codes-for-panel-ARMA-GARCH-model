@@ -252,7 +252,7 @@ while(dim(a)[1]<sample_size){
     
     value<-0
     for(i in 1:N){
-      h0<- est_omega[i]*(1-nu-tau) + nu*est_omega[i]
+      h0<- est_omega[i] 
       value<-value + log(dnorm(est_U[(i-1)*T+1],sd=sqrt(h0)))
       
       for(t in 2:T){
@@ -603,7 +603,7 @@ while(dim(a)[1]<sample_size){
     nu<-par[3]
 
 
-    h0<-omega*(1-nu-tau) + nu*omega
+    h0<-omega 
     h<-c(h0)
     for(t in 2:T){
 
@@ -657,7 +657,7 @@ while(dim(a)[1]<sample_size){
     nu<-par[3]
 
 
-    h0<--omega
+    h0<-0
     h<-c(h0)
     for(t in 2:T){
 
@@ -1307,7 +1307,7 @@ while(dim(a)[1]<sample_size){
     
     value<-0
     for(i in 1:N){
-      h0<- est_omega_1[i]*(1-nu-tau) + nu*est_omega_1[i]
+      h0<- est_omega_1[i] 
       value<-value + log(dnorm(est_U[(i-1)*T+1],sd=sqrt(h0)))
       
       for(t in 2:(T/2)){
@@ -1350,7 +1350,7 @@ while(dim(a)[1]<sample_size){
     
     value<-0
     for(i in 1:N){
-      h0<- est_omega_2[i]*(1-nu-tau) + nu*est_omega_2[i]
+      h0<- est_omega_2[i] 
       value<-value + log(dnorm(est_U[(i-1)*T+T/2+1],sd=sqrt(h0)))
       
       for(t in (T/2 + 2) : T){

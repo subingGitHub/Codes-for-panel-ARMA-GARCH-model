@@ -176,7 +176,7 @@ ml_GARCH_1<-function(par){
   
   value<-0
   for(i in 1:N){
-    h0<- est_omega_1[i]*(1-nu-tau) + nu*est_omega_1[i]
+    h0<- est_omega_1[i] 
     value<-value + log(dnorm(est_U[(i-1)*T_used+1],sd=sqrt(h0)))
     
     for(t in 2:floor(T_used/2)){
@@ -218,7 +218,7 @@ ml_GARCH_2<-function(par){
   
   value<-0
   for(i in 1:N){
-    h0<- est_omega_2[i]*(1-nu-tau) + nu*est_omega_2[i]
+    h0<- est_omega_2[i] 
     value<-value + log(dnorm(est_U[(i-1)*T_used+floor(T_used/2)+1],sd=sqrt(h0)))
     
     for(t in (floor(T_used/2) + 2) : T_used){

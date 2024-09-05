@@ -411,7 +411,7 @@ for(i in 1:N){
     
     
     value<-0
-    h0<- est_omega*(1-nu-tau) + nu*est_omega
+    h0<- est_omega 
     value<-value + log(dnorm(est_U[1],sd=sqrt(h0)))
     
     for(t in 2:T_used){
@@ -456,7 +456,7 @@ for(i in 1:N){
     nu<-par[3]
     
     
-    h0<-omega*(1-nu-tau) + nu*omega
+    h0<-omega 
     h<-c(h0)
     for(t in 2:T_used){
       
@@ -752,7 +752,7 @@ ml_GARCH<-function(par){
   
   value<-0 
   for(i in 1:N){
-    h0<- est_omega[i]*(1-nu-tau) + nu*est_omega[i]
+    h0<- est_omega[i] 
     value<-value + log(dnorm(est_U[(i-1)*T_used+1],sd=sqrt(h0)))
     
     for(t in 2:T_used){
@@ -787,13 +787,23 @@ est_zeta<-estml_GARCH$pars
 
  
 
-est_gamma_unbias<- c(0.121148004, 0.227738363, 0.011445665, 0.002982632)
+#est_gamma_unbias<- c(0.121148004, 0.227738363, 0.011445665, 0.002982632)
 
-est_gamma_unbias_J <-c(0.137070873, 0.219580345, 0.009432523, 0.002814517)
+#est_gamma_unbias_J <-c(0.137070873, 0.219580345, 0.009432523, 0.002814517)
 
 
 
-est_zeta_unbias_J<-c(0.1785362, 0.7299799)
+#est_zeta_unbias_J<-c(0.1785362, 0.7299799)
+
+est_gamma_unbias<-c(0.119650430,0.228081517, 0.011340258,0.003109919)  #c(0.24947821, 0.15098577, 0.01420648, 0.01100394)
+
+
+
+est_gamma_unbias_J <- c(0.28524390, 0.13793283, 0.01489352, 0.01384094)  #c(0.137070873, 0.219580345, 0.009432523, 0.002814517)
+#c(0.135372033, 0.220141173, 0.009415302, 0.002927104) 
+
+
+est_zeta_unbias_J<-c(0.22, 0.415)#c(0.1785362, 0.7299799)
 
 
 interval_ratio_our<-c()

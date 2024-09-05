@@ -347,7 +347,7 @@ for(i in 1:N){
     
     
     value<-0
-    h0<- est_omega*(1-nu-tau) + nu*est_omega
+    h0<- est_omega 
     value<-value + log(dnorm(est_U[1],sd=sqrt(h0)))
     
     for(t in 2:T_used){

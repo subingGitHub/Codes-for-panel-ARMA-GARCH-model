@@ -179,7 +179,7 @@ ml_GARCH<-function(par){
   
   value<-0 
   for(i in 1:N){
-    h0<- est_omega[i]*(1-nu-tau) + nu*est_omega[i]
+    h0<- est_omega[i]
     value<-value + log(dnorm(est_U[(i-1)*T+1],sd=sqrt(h0)))
     
     for(t in 2:T){
@@ -610,7 +610,7 @@ fun_h<-function(par,y){
   nu<-par[3]
   
   
-  h0<-omega*(1-nu-tau) + nu*omega
+  h0<-omega 
   h<-c(h0)
   for(t in 2:T){
     
@@ -664,7 +664,7 @@ fun_h_tau<-function(par,y){
   nu<-par[3]
   
   
-  h0<--omega
+  h0<-0
   h<-c(h0)
   for(t in 2:T){
     

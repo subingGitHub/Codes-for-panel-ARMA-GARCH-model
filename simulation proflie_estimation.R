@@ -87,10 +87,12 @@ fun_Sigma<-function(psi,T_used = T){
 #########################################
 #########################################
 
+omega<-matrix(runif(N,1,3))
+mu<-rnorm(N)
 
 while(dim(our_method)[1]<sample_size){ 
   
-  omega<-matrix(runif(N,1,3))
+  
 
   U<-c()
   
@@ -117,7 +119,7 @@ while(dim(our_method)[1]<sample_size){
   
   X_all<-matrix(rnorm(N*T*2))
   
-  mu<-rnorm(N)
+  
   
   
   A_phi<-fun_A(phi,2*T)
